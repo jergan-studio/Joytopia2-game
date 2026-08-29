@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: joytopia2-game
+    runtime: static
+    buildCommand: javac compiler/LESC.java && java -cp compiler LESC workspace/scripts/main.lesc workspace/scripts/main.js
+    staticPublishPath: .
+    pullRequestPreviewsEnabled: false
+    headers:
+      - path: /*
+        name: Cache-Control
+        value: no-cache
