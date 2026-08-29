@@ -1,0 +1,8 @@
+-- Main Joytopia 2 game script
+
+function onStart()
+    print("Welcome to Joytopia 2!")
+    spawn()
+end
+
+onStart()
