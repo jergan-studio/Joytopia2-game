@@ -1,0 +1,13 @@
+{
+  "name": "joytopia2-game",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Joytopia 2 game template with LESC scripting",
+  "scripts": {
+    "start": "node server.js",
+    "build": "echo Joytopia 2 build complete"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
