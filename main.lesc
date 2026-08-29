@@ -1,0 +1,13 @@
+-- Joytopia 2 Game Template
+-- LESC (Lunar Eclipse Script)
+-- Lua/Luau-inspired scripting for Joytopia 2
+
+print("Welcome to Joytopia 2!")
+
+function onStart()
+    print("Game started!")
+end
+
+function onUpdate(dt)
+    -- Put game logic here.
+end
