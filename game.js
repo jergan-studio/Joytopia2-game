@@ -20,7 +20,6 @@ sun.position.set(20, 30, 10);
 sun.castShadow = true;
 scene.add(sun);
 
-// Starter world
 const ground = new THREE.Mesh(
   new THREE.BoxGeometry(100, 1, 100),
   new THREE.MeshStandardMaterial({ color: 0x4caf50 })
@@ -29,27 +28,20 @@ ground.position.y = -0.5;
 ground.receiveShadow = true;
 scene.add(ground);
 
-// Load the included Joytopia player model.
 const player = new THREE.Group();
 player.position.set(0, 0, 0);
 scene.add(player);
 
-new GLTFLoader().load(
-  './jergplr.glb',
-  (gltf) => {
-    const model = gltf.scene;
-    model.scale.setScalar(1);
-    model.traverse((obj) => {
-      if (obj.isMesh) {
-        obj.castShadow = true;
-        obj.receiveShadow = true;
-      }
-    });
-    player.add(model);
-  },
-  undefined,
-  (error) => console.warn('Player model could not be loaded:', error)
-);
+new GLTFLoader().load('./jergplr.glb', (gltf) => {
+  const model = gltf.scene;
+  model.traverse((obj) => {
+    if (obj.isMesh) {
+      obj.castShadow = true;
+      obj.receiveShadow = true;
+    }
+  });
+  player.add(model);
+}, undefined, (error) => console.warn('Player model could not be loaded:', error));
 
 const keys = new Set();
 addEventListener('keydown', (e) => keys.add(e.key.toLowerCase()));
@@ -59,6 +51,24 @@ const velocity = new THREE.Vector3();
 const direction = new THREE.Vector3();
 let grounded = true;
 let last = performance.now();
+
+globalThis.Joytopia = {
+  Player: player,
+  Workspace: scene,
+  spawn() {
+    player.position.set(0, 0, 0);
+    velocity.set(0, 0, 0);
+  },
+  broadcast(message) {
+    console.log('[Joytopia]', message);
+    dispatchEvent(new CustomEvent('joytopia:broadcast', { detail: message }));
+  }
+};
+
+// Load the precompiled LESC ScriptService bundle.
+import('./workspace/scriptservice/main.js').catch((error) => {
+  console.warn('LESC ScriptService could not be loaded:', error);
+});
 
 function update(dt) {
   direction.set(0, 0, 0);
