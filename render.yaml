@@ -2,7 +2,7 @@ services:
   - type: web
     name: joytopia2-game
     runtime: static
-    buildCommand: javac compiler/LESC.java && java -cp compiler LESC workspace/scripts/main.lesc workspace/scripts/main.js
+    buildCommand: echo "Joytopia 2 static build - LESC scripts are precompiled"
     staticPublishPath: .
     pullRequestPreviewsEnabled: false
     headers:
