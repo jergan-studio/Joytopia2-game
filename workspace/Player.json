@@ -1,0 +1,9 @@
+{
+  "name": "Player",
+  "type": "Player",
+  "position": { "x": 100, "y": 100 },
+  "size": { "width": 32, "height": 32 },
+  "color": "#ffffff",
+  "physics": { "gravity": true, "canJump": true },
+  "collision": true
+}
