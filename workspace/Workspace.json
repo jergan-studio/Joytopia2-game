@@ -1,0 +1,10 @@
+{
+  "name": "Workspace",
+  "type": "Workspace",
+  "parts": [
+    "parts/Ground.json",
+    "parts/Spawn.json",
+    "parts/Platform.json"
+  ],
+  "player": "Player.json"
+}
