@@ -1,0 +1,8 @@
+{
+  "name": "Platform",
+  "type": "Part",
+  "position": { "x": 300, "y": 330 },
+  "size": { "width": 180, "height": 30 },
+  "color": "#555555",
+  "collision": true
+}
