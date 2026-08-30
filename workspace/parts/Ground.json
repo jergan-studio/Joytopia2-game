@@ -1,0 +1,8 @@
+{
+  "name": "Ground",
+  "type": "Part",
+  "position": { "x": 0, "y": 430 },
+  "size": { "width": 900, "height": 50 },
+  "color": "#333333",
+  "collision": true
+}
