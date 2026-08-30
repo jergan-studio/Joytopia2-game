@@ -1,10 +1,11 @@
 {
   "name": "Workspace",
   "type": "Workspace",
+  "sky": "Sky.json",
+  "player": "Player.json",
   "parts": [
     "parts/Ground.json",
     "parts/Spawn.json",
     "parts/Platform.json"
-  ],
-  "player": "Player.json"
+  ]
 }
