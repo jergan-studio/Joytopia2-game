@@ -1,0 +1,9 @@
+{
+  "name": "Sky",
+  "type": "Sky",
+  "background": "#78c8ff",
+  "gradient": {
+    "top": "#4b9fe8",
+    "bottom": "#c9efff"
+  }
+}
