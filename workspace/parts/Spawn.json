@@ -1,0 +1,8 @@
+{
+  "name": "Spawn",
+  "type": "Spawn",
+  "position": { "x": 100, "y": 380 },
+  "size": { "width": 32, "height": 32 },
+  "visible": false,
+  "collision": false
+}
